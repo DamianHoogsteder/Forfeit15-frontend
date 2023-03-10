@@ -1,29 +1,30 @@
 import React from "react";
 import {
     Stack,
-    Image,
     Flex,
     Box,
-    Grid,
-    CSSReset
+    Grid
 } from "@chakra-ui/react";
 import Thread from "../components/thread/thread";
 import Searchbar from "../components/searchbar/searchbar";
 import HeadingIcon from "../components/HeadingIcon/HeadingIcon";
+import "./scrollbar.css";
+
 
 export function Home() {
     return (
-        <>
-            <CSSReset/>
             <Box mt={0}>
                 <HeadingIcon />
                 <Flex alignItems="center" justifyContent="center" height="100%" mt={0}>
                     <Grid templateColumns="3fr 2fr" gap={4}>
                         <Box
-                            height="70vh"
+                            height="90vh"
                             sx={{
                                 overflowY: "auto",
                                 maxHeight: "70vh",
+                                scrollbarWidth: "auto",
+                                scrollbarColor: "#E53E3E #1A202C",
+                                paddingRight: "6px",
                             }}
                         >
                             <Stack spacing={4}>
@@ -44,6 +45,5 @@ export function Home() {
                     </Grid>
                 </Flex>
             </Box>
-        </>
     );
 }

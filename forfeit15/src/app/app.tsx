@@ -5,11 +5,11 @@ import Navbar from "../components/navbar/navbar";
 import Router from "../Router";
 
 export function App() {
-    const bgImage = "url('https://cdnb.artstation.com/p/assets/images/images/053/426/897/large/rudy-siswanto-udyr-bear.jpg?1662171459')";
+    const bgImage = "url('https://cdnb.artstation.com/p/assets/images/images/024/827/647/large/w-.jpg?1583676030')";
     const bgSize = "cover";
     const bgRepeat = "no-repeat";
     const bgColor = useColorModeValue("white", "gray.800");
-    const bgGradient = "linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.9))";
+    const bgGradient = "linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.9))";
 
     return (
         <Box
