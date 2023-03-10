@@ -1,7 +1,8 @@
-import {Box, Icon, Link, Stack, Text, useColorModeValue} from "@chakra-ui/react";
+import {Box, Icon, Link, Spacer, Stack, Text, useColorModeValue} from "@chakra-ui/react";
 import {Link as RouterLink} from "react-router-dom";
-import {FiHome, FiSettings, FiUser} from "react-icons/fi";
+import {FiHome, FiSettings, FiUser, FiLogOut} from "react-icons/fi";
 import React from "react";
+import {AiFillCrown} from "react-icons/ai";
 
 /* eslint-disable-next-line */
 export interface SidebarProps {
@@ -27,47 +28,60 @@ export function Sidebar() {
                 display="flex"
                 alignItems="center"
                 justifyContent="center"
-                mb="8"
+                mb="10"
             >
-                <Icon as={FiHome} fontSize="2xl" color={activeColor}/>
+                <Icon as={AiFillCrown} fontSize="2xl" color={activeColor}/>
             </Box>
 
             {/* Navigation links */}
-            <Stack spacing="6">
-                <Link
-                    as={RouterLink}
-                    to="/"
-                    display="flex"
-                    px="1.5"
-                    py="1"
-                    rounded="md"
-                    _hover={{bg: activeBg}}
-                >
-                    <Icon as={FiHome} fontSize="xl" color={color} mr="2"/>
-                </Link>
-                <Link
-                    as={RouterLink}
-                    to="/profile"
-                    display="flex"
-                    px="1.5"
-                    py="1"
-                    rounded="md"
-                    _hover={{bg: activeBg}}
-                >
-                    <Icon as={FiUser} fontSize="xl" color={color} mr="2"/>
-                </Link>
-                <Link
-                    as={RouterLink}
-                    to="/settings"
-                    display="flex"
-                    px="1.5"
-                    py="1"
-                    rounded="md"
-                    _hover={{bg: activeBg}}
-                >
-                    <Icon as={FiSettings} fontSize="xl" color={color} mr="2"/>
-                </Link>
-            </Stack>
+            <Box style={{ display: 'flex', flexDirection: 'column', height: '100%', position: "fixed"}}>
+                <Stack spacing="6" flexGrow={1}>
+                    <Link
+                        as={RouterLink}
+                        to="/"
+                        display="flex"
+                        px="1.5"
+                        py="1"
+                        rounded="md"
+                        _hover={{ bg: activeBg }}
+                    >
+                        <Icon as={FiHome} fontSize="xl" color={color} mr="2" />
+                    </Link>
+                    <Link
+                        as={RouterLink}
+                        to="/profile"
+                        display="flex"
+                        px="1.5"
+                        py="1"
+                        rounded="md"
+                        _hover={{ bg: activeBg }}
+                    >
+                        <Icon as={FiUser} fontSize="xl" color={color} mr="2" />
+                    </Link>
+                    <Link
+                        as={RouterLink}
+                        to="/settings"
+                        display="flex"
+                        px="1.5"
+                        py="1"
+                        rounded="md"
+                        _hover={{ bg: activeBg }}
+                    >
+                        <Icon as={FiSettings} fontSize="xl" color={color} mr="2" />
+                    </Link>
+                    <Link
+                        as={RouterLink}
+                        to="/logout"
+                        display="flex"
+                        px="1.5"
+                        py="1"
+                        rounded="md"
+                        _hover={{ bg: activeBg }}
+                    >
+                        <Icon as={FiLogOut} fontSize="xl" color={color} mr="2" />
+                    </Link>
+                </Stack>
+            </Box>
         </Box>
     );
 };

@@ -10,63 +10,34 @@ import {
     Image,
     CardHeader,
     Flex,
-    Avatar, Box, IconButton
+    Avatar, Box, IconButton, Grid, GridItem
 } from "@chakra-ui/react";
 import {BiChat, BiLike, BiShare, BsThreeDotsVertical} from "react-icons/all";
+import Thread from "../components/Thread/Thread";
 
 export function Home() {
     return (
-        <Card maxW='md'>
-            <CardHeader>
-                <Flex>
-                    <Flex flex='1' gap='4' alignItems='center' flexWrap='wrap'>
-                        <Avatar name='Segun Adebayo' src='https://bit.ly/sage-adebayo' />
-
-                        <Box>
-                            <Heading size='sm'>Segun Adebayo</Heading>
-                            <Text>Creator, Chakra UI</Text>
-                        </Box>
-                    </Flex>
-                    <IconButton
-                        variant='ghost'
-                        colorScheme='gray'
-                        aria-label='See menu'
-                        icon={<BsThreeDotsVertical />}
+        <Box height="100vh">
+            <Flex alignItems="center" justifyContent="center" height="100%">
+                <Box bg="grey.400" width={300} height={150} position="absolute">
+                    <Image src="https://via.placeholder.com/150" alt="My Image" objectFit="contain"/>
+                </Box>
+                <Grid templateColumns="3fr 2fr" gap={4}>
+                    <Box>
+                        <Stack spacing={4}>
+                            <Thread/>
+                            <Thread/>
+                            <Thread/>
+                        </Stack>
+                    </Box>
+                    <Box
+                        borderRadius="md"
+                        boxShadow="md"
+                        bg="gray.200"
+                        height="100%"
                     />
-                </Flex>
-            </CardHeader>
-            <CardBody>
-                <Text>
-                    With Chakra UI, I wanted to sync the speed of development with the speed
-                    of design. I wanted the developer to be just as excited as the designer to
-                    create a screen.
-                </Text>
-            </CardBody>
-            <Image
-                objectFit='cover'
-                src='https://images.unsplash.com/photo-1531403009284-440f080d1e12?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80'
-                alt='Chakra UI'
-            />
-
-            <CardFooter
-                justify='space-between'
-                flexWrap='wrap'
-                sx={{
-                    '& > button': {
-                        minW: '136px',
-                    },
-                }}
-            >
-                <Button flex='1' variant='ghost' leftIcon={<BiLike />}>
-                    Like
-                </Button>
-                <Button flex='1' variant='ghost' leftIcon={<BiChat />}>
-                    Comment
-                </Button>
-                <Button flex='1' variant='ghost' leftIcon={<BiShare />}>
-                    Share
-                </Button>
-            </CardFooter>
-        </Card>
+                </Grid>
+            </Flex>
+        </Box>
     );
 }
