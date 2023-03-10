@@ -1,43 +1,49 @@
 import React from "react";
 import {
-    Button,
-    Card,
-    CardBody,
-    CardFooter,
-    Heading,
     Stack,
-    Text,
     Image,
-    CardHeader,
     Flex,
-    Avatar, Box, IconButton, Grid, GridItem
+    Box,
+    Grid,
+    CSSReset
 } from "@chakra-ui/react";
-import {BiChat, BiLike, BiShare, BsThreeDotsVertical} from "react-icons/all";
-import Thread from "../components/Thread/Thread";
+import Thread from "../components/thread/thread";
+import Searchbar from "../components/searchbar/searchbar";
+import HeadingIcon from "../components/HeadingIcon/HeadingIcon";
 
 export function Home() {
     return (
-        <Box height="100vh">
-            <Flex alignItems="center" justifyContent="center" height="100%">
-                <Box bg="grey.400" width={300} height={150} position="absolute">
-                    <Image src="https://via.placeholder.com/150" alt="My Image" objectFit="contain"/>
-                </Box>
-                <Grid templateColumns="3fr 2fr" gap={4}>
-                    <Box>
-                        <Stack spacing={4}>
-                            <Thread/>
-                            <Thread/>
-                            <Thread/>
-                        </Stack>
-                    </Box>
-                    <Box
-                        borderRadius="md"
-                        boxShadow="md"
-                        bg="gray.200"
-                        height="100%"
-                    />
-                </Grid>
-            </Flex>
-        </Box>
+        <>
+            <CSSReset/>
+            <Box mt={0}>
+                <HeadingIcon />
+                <Flex alignItems="center" justifyContent="center" height="100%" mt={0}>
+                    <Grid templateColumns="3fr 2fr" gap={4}>
+                        <Box
+                            height="70vh"
+                            sx={{
+                                overflowY: "auto",
+                                maxHeight: "70vh",
+                            }}
+                        >
+                            <Stack spacing={4}>
+                                {/* Threads to be rendered from backend*/}
+                                <Thread/>
+                                <Thread/>
+                                <Thread/>
+                                <Thread/>
+                                <Thread/>
+                                <Thread/>
+                                <Thread/>
+                                <Thread/>
+                                <Thread/>
+                                <Thread/>
+                            </Stack>
+                        </Box>
+                        <Searchbar />
+                    </Grid>
+                </Flex>
+            </Box>
+        </>
     );
 }

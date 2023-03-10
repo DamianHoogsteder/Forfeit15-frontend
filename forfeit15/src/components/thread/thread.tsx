@@ -5,7 +5,7 @@ export default function Thread() {
         <Box
             borderRadius="md"
             boxShadow="md"
-            bg="gray.200"
+            bg="gray.800"
             p={4}
             position="relative"
         >
@@ -26,8 +26,8 @@ export default function Thread() {
                     borderRadius="md"
                 />
                 <Box>
-                    <Text fontSize="xl" fontWeight="bold" mb={2}>Title</Text>
-                    <Text fontSize="md" mb={4}>
+                    <Text fontSize="xl" fontWeight="bold" mb={2} color="white">Title</Text>
+                    <Text fontSize="md" mb={4} color="white">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut bibendum augue sed sem ultricies, at suscipit metus sodales.
                     </Text>
                 </Box>
