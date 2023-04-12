@@ -5,8 +5,8 @@ import {
     Box,
     Grid
 } from "@chakra-ui/react";
-import Thread from "../components/thread/thread";
-import Searchbar from "../components/searchbar/searchbar";
+import ThreadPreview from "../components/thread/threadPreview";
+import FeaturedComponent from "../components/featuredComponent/featuredComponent";
 import HeadingIcon from "../components/HeadingIcon/HeadingIcon";
 import "./scrollbar.css";
 
@@ -29,19 +29,19 @@ export function Home() {
                         >
                             <Stack spacing={4}>
                                 {/* Threads to be rendered from backend*/}
-                                <Thread/>
-                                <Thread/>
-                                <Thread/>
-                                <Thread/>
-                                <Thread/>
-                                <Thread/>
-                                <Thread/>
-                                <Thread/>
-                                <Thread/>
-                                <Thread/>
+                                <ThreadPreview/>
+                                <ThreadPreview/>
+                                <ThreadPreview/>
+                                <ThreadPreview/>
+                                <ThreadPreview/>
+                                <ThreadPreview/>
+                                <ThreadPreview/>
+                                <ThreadPreview/>
+                                <ThreadPreview/>
+                                <ThreadPreview/>
                             </Stack>
                         </Box>
-                        <Searchbar />
+                        <FeaturedComponent />
                     </Grid>
                 </Flex>
             </Box>

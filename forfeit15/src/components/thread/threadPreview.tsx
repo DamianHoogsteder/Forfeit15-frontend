@@ -1,6 +1,8 @@
-import { Box, Flex, Image, Text, Button } from "@chakra-ui/react";
+import {Box, Flex, Image, Text, Button, Link} from "@chakra-ui/react";
+import {Link as RouterLink} from "react-router-dom";
+import React from "react";
 
-export default function Thread() {
+export default function ThreadPreview() {
     return (
         <Box
             borderRadius="md"
@@ -28,19 +30,25 @@ export default function Thread() {
                 <Box>
                     <Text fontSize="xl" fontWeight="bold" mb={2} color="white">Title</Text>
                     <Text fontSize="md" mb={4} color="white">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut bibendum augue sed sem ultricies, at suscipit metus sodales.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut bibendum augue sed sem ultricies, at
+                        suscipit metus sodales.
                     </Text>
                 </Box>
             </Flex>
-            <Button
-                colorScheme="red"
-                size="sm"
-                position="absolute"
-                bottom={4}
-                right={4}
+            <Link
+                as={RouterLink}
+                to="/thread"
             >
-                Continue reading
-            </Button>
+                <Button
+                    colorScheme="red"
+                    size="sm"
+                    position="absolute"
+                    bottom={4}
+                    right={4}
+                >
+                    Continue reading
+                </Button>
+            </Link>
         </Box>
     );
 }

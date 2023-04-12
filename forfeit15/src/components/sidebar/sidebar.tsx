@@ -1,6 +1,6 @@
-import {Box, Divider, Icon, Link, Spacer, Stack, Text, useColorModeValue} from "@chakra-ui/react";
+import {Box, Divider, Icon, Link, Stack, useColorModeValue} from "@chakra-ui/react";
 import {Link as RouterLink} from "react-router-dom";
-import {FiHome, FiSettings, FiUser, FiLogOut, FiEdit, FiStar} from "react-icons/fi";
+import {FiHome, FiLogOut, FiEdit, FiStar} from "react-icons/fi";
 import React from "react";
 import {AiFillCrown} from "react-icons/ai";
 
