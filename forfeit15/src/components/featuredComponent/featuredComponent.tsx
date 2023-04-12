@@ -3,7 +3,7 @@ import {FaSearch} from "react-icons/fa";
 import React from "react";
 
 
-export default function Searchbar() {
+export default function FeaturedComponent() {
     return (
         <Box borderRadius="md" boxShadow="md" bg="gray.800" height="100%" position="relative">
             <Flex
