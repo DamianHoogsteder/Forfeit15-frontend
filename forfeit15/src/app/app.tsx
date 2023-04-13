@@ -3,20 +3,22 @@ import {Box, Flex, useColorModeValue} from "@chakra-ui/react";
 import Sidebar from "../components/sidebar/sidebar";
 import Navbar from "../components/navbar/navbar";
 import Router from "../Router";
+import Image from "../assets/Ekko.jpg";
 
 export function App() {
-    const bgImage = "url('https://cdnb.artstation.com/p/assets/images/images/024/827/647/large/w-.jpg?1583676030')";
+    const bgImage = Image;
     const bgSize = "cover";
     const bgRepeat = "no-repeat";
     const bgColor = useColorModeValue("white", "gray.800");
-    const bgGradient = "linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.9))";
+    const bgGradient = "linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.7))";
 
     return (
         <Box
-            h="100vh"
-            bgImage={`${bgGradient}, ${bgImage}`}
+            h="100%"
+            bgImage={`${bgGradient}, url(${bgImage})`}
             bgSize={bgSize}
             bgRepeat={bgRepeat}
+            bgAttachment="fixed"
         >
             <Flex>
                 <Sidebar/>

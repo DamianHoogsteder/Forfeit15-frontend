@@ -1,13 +1,29 @@
 import React, {useState} from "react";
-import {Box, Flex, Grid, Text} from "@chakra-ui/react";
+import {
+    Box, Button,
+    Flex,
+    Grid,
+    Modal,
+    ModalBody,
+    ModalContent,
+    ModalFooter,
+    ModalHeader,
+    ModalOverlay,
+    Text
+} from "@chakra-ui/react";
 import FeaturedComponent from "../components/featuredComponent/featuredComponent";
-import HeadingIcon from "../components/HeadingIcon/HeadingIcon";
+import HeadingIcon from "../components/headingIcon/HeadingIcon";
+import InfoNodeForm from "../components/Forms/InfoNodeForm/InfoNodeForm";
 
 export default function Thread() {
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     const handleAddRequestClick = () => {
         setIsModalOpen(true);
+    };
+
+    const handleCloseModal = () => {
+        setIsModalOpen(false);
     };
 
     return (
@@ -18,7 +34,7 @@ export default function Thread() {
                     <Box
                         bg="gray.800"
                         height={{base: "auto", md: "70vh"}}
-                        width={{base: "100%", md: "1000px"}}
+                        width={{base: "100%", md: "40vw"}}
                         borderRadius="md"
                         boxShadow="md"
                         position="relative"
@@ -76,7 +92,10 @@ export default function Thread() {
                     <FeaturedComponent/>
                 </Grid>
             </Flex>
-            {/* Modal code goes here */}
+            <InfoNodeForm
+                isModalOpen={isModalOpen}
+                handleCloseModal={handleCloseModal}
+            />
         </Box>
 
     );

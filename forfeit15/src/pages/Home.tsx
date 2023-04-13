@@ -5,10 +5,9 @@ import {
     Box,
     Grid
 } from "@chakra-ui/react";
-import ThreadPreview from "../components/thread/threadPreview";
+import ThreadPreview from "../components/threadPreview/threadPreview";
 import FeaturedComponent from "../components/featuredComponent/featuredComponent";
-import HeadingIcon from "../components/HeadingIcon/HeadingIcon";
-import "./scrollbar.css";
+import HeadingIcon from "../components/headingIcon/HeadingIcon";
 
 
 export function Home() {
