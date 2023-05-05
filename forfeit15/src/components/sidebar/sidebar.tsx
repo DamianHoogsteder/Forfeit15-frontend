@@ -1,6 +1,6 @@
 import {Box, Divider, Icon, Link, Stack, useColorModeValue} from "@chakra-ui/react";
 import {Link as RouterLink} from "react-router-dom";
-import {FiHome, FiLogOut, FiEdit, FiStar} from "react-icons/fi";
+import {FiEdit, FiHome, FiLogOut, FiStar} from "react-icons/fi";
 import React from "react";
 import {AiFillCrown} from "react-icons/ai";
 
@@ -34,7 +34,7 @@ export function Sidebar() {
             </Box>
 
             {/* Navigation links */}
-            <Box style={{ display: 'flex', flexDirection: 'column', height: '100%', position: "fixed"}}>
+            <Box style={{display: 'flex', flexDirection: 'column', height: '100%', position: "fixed"}}>
                 <Stack spacing="6" flexGrow={1}>
                     <Link
                         as={RouterLink}
@@ -45,7 +45,7 @@ export function Sidebar() {
                         px="1.5"
                         py="1"
                         rounded="md"
-                        _hover={{ bg: activeBg }}
+                        _hover={{bg: activeBg}}
                     >
                         <Icon as={FiHome} fontSize="xl" color={color} m="auto"/>
                     </Link>
@@ -58,7 +58,7 @@ export function Sidebar() {
                         px="1.5"
                         py="1"
                         rounded="md"
-                        _hover={{ bg: activeBg }}
+                        _hover={{bg: activeBg}}
                     >
                         <Icon as={FiStar} fontSize="xl" color={color} m="auto"/>
                     </Link>
@@ -71,12 +71,12 @@ export function Sidebar() {
                         px="1.5"
                         py="1"
                         rounded="md"
-                        _hover={{ bg: activeBg }}
+                        _hover={{bg: activeBg}}
                     >
                         <Icon as={FiEdit} fontSize="xl" color={color} m="auto"/>
                     </Link>
                 </Stack>
-                <Divider my={4} />
+                <Divider my={4}/>
                 <Box
                     display="flex"
                     alignItems="center"
@@ -92,14 +92,14 @@ export function Sidebar() {
                         px="1.5"
                         py="1"
                         rounded="md"
-                        _hover={{ bg: activeBg }}
+                        _hover={{bg: activeBg}}
                     >
-                        <Icon as={FiLogOut} fontSize="xl" color={color} m="auto" />
+                        <Icon as={FiLogOut} fontSize="xl" color={color} m="auto"/>
                     </Link>
                 </Box>
             </Box>
         </Box>
     );
-};
+}
 
 export default Sidebar;

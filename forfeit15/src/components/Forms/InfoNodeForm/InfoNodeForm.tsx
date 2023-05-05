@@ -7,7 +7,7 @@ type InfoNodeFormProps = {
     handleCloseModal: () => void;
 };
 
-export default function InfoNodeForm({isModalOpen, handleCloseModal} : InfoNodeFormProps) {
+export default function InfoNodeForm({isModalOpen, handleCloseModal}: InfoNodeFormProps) {
     return (
         <Modal isOpen={isModalOpen} onClose={handleCloseModal} isCentered>
             <ModalOverlay/>

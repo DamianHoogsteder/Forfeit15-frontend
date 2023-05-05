@@ -1,7 +1,7 @@
 export function Settings() {
-    return(
+    return (
         <div>
-        <h1>This is settings</h1>
+            <h1>This is settings</h1>
         </div>
     );
 }

@@ -1,4 +1,4 @@
-import {Box, Input, InputGroup, Button, Flex, InputRightElement} from "@chakra-ui/react";
+import {Box, Button, Flex, Input, InputGroup, InputRightElement} from "@chakra-ui/react";
 import {FaSearch} from "react-icons/fa";
 import React from "react";
 
@@ -25,11 +25,11 @@ export default function FeaturedComponent() {
                         size="md"
                         bg="gray.700"
                         border="none"
-                        _focus={{ border: "none" }}
+                        _focus={{border: "none"}}
                     />
                     <InputRightElement>
                         <Button variant="solid" colorScheme="red">
-                            <FaSearch />
+                            <FaSearch/>
                         </Button>
                     </InputRightElement>
                 </InputGroup>

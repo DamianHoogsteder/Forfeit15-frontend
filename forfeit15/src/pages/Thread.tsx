@@ -1,9 +1,5 @@
 import React, {useState} from "react";
-import {
-    Box,
-    Flex,
-    Grid
-} from "@chakra-ui/react";
+import {Box, Flex, Grid} from "@chakra-ui/react";
 import FeaturedComponent from "../components/featuredComponent/featuredComponent";
 import HeadingIcon from "../components/headingIcon/HeadingIcon";
 import InfoNodeForm from "../components/Forms/InfoNodeForm/InfoNodeForm";
