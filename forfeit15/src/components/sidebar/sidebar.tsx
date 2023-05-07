@@ -51,7 +51,7 @@ export function Sidebar() {
                     </Link>
                     <Link
                         as={RouterLink}
-                        to="/featured"
+                        to="/settings"
                         display="flex"
                         alignItems="center"
                         justifyContent="center"

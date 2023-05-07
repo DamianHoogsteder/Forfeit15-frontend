@@ -80,14 +80,14 @@ export default function Notifications() {
                     position="relative"
                     variant="ghost"
                     aria-label="Notifications"
-                    _hover={{ bg: 'transparent' }}
+                    _hover={{bg: 'transparent'}}
                     onClick={() => setShowNotifications(!showNotifications)}
                 >
                     <Box position="relative">
                         <BellIcon
                             boxSize={5}
                             color={iconColor}
-                            _hover={{ color: iconHoverColor }}
+                            _hover={{color: iconHoverColor}}
                         />
                         {notifications.length > 0 && (
                             <span
@@ -128,29 +128,34 @@ export default function Notifications() {
                         scrollbarWidth: 'thin',
                     }}
                 >
-                    {notifications.map((notification) => (
-                        <div key={notification.TimeStamp} className="notification-item">
-                            <Box style={{display: 'flex', justifyContent: 'space-between'}}>
-                                <div>
-                                    <Text as='b'>{notification.Title}</Text>
-                                </div>
-                                <div style={{ display: 'flex', alignItems: 'center' }}>
-                                    <Text>{formatTimestamp(notification.TimeStamp)}</Text>
-                                    <CloseIcon
-                                        boxSize={3}
-                                        color="gray.400"
-                                        cursor="pointer"
-                                        ml={2}
-                                        onClick={() => {
-                                            setNotifications((prevNotifications) => prevNotifications.filter((item) => item.TimeStamp !== notification.TimeStamp));
-                                        }}
-                                    />
-                                </div>
-                            </Box>
-                            <Text>{notification.Description}</Text>
-                            <Text>You were subscribed to: {notification.Type}</Text>
-                        </div>
-                    ))}
+                    {notifications.length === 0 ? (
+                        <Text>No notifications currently.</Text>
+                    ) : (
+                        notifications.map((notification) => (
+                            <div key={notification.TimeStamp} className="notification-item">
+                                <Box style={{display: 'flex', justifyContent: 'space-between'}}>
+                                    <div>
+                                        <Text as='b'>{notification.Title}</Text>
+                                    </div>
+                                    <div style={{display: 'flex', alignItems: 'center'}}>
+                                        <Text>{formatTimestamp(notification.TimeStamp)}</Text>
+                                        <CloseIcon
+                                            boxSize={3}
+                                            color="gray.400"
+                                            cursor="pointer"
+                                            ml={2}
+                                            onClick={() => {
+                                                setNotifications((prevNotifications) => prevNotifications.filter((item) => item.TimeStamp !== notification.TimeStamp));
+                                            }}
+                                        />
+                                    </div>
+                                    )
+                                </Box>
+                                <Text>{notification.Description}</Text>
+                                <Text>You were subscribed to: {notification.Type}</Text>
+                            </div>
+                        ))
+                    )}
                 </PopoverBody>
             </PopoverContent>
         </Popover>

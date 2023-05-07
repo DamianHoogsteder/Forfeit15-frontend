@@ -39,9 +39,6 @@ export default function Navbar() {
             zIndex="999"
         >
             <Link as={RouterLink} to="/download">
-                <Button leftIcon={<ArrowDownIcon/>} rounded="4px" colorScheme="red">
-                    Download now
-                </Button>
             </Link>
             <Box mr="65">
                 <Notifications />
