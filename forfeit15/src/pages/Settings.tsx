@@ -7,7 +7,6 @@ export function Settings() {
         <Box
         height="90vh"
         >
-
             <PreferencesForm />
         </Box>
     );

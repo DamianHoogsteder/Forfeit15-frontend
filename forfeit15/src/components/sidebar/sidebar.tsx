@@ -1,13 +1,13 @@
 import {Box, Divider, Icon, Link, Stack, useColorModeValue} from "@chakra-ui/react";
 import {Link as RouterLink} from "react-router-dom";
-import {FiEdit, FiHome, FiLogOut, FiStar} from "react-icons/fi";
+import {FiEdit, FiHome, FiStar} from "react-icons/fi";
 import React from "react";
 import {AiFillCrown} from "react-icons/ai";
+import LogoutButton from "../logoutButton/LogoutButton";
 
 /* eslint-disable-next-line */
 export interface SidebarProps {
 }
-
 export function Sidebar() {
     const bg = useColorModeValue('gray.900', 'gray.800');
     const activeBg = useColorModeValue('gray.700', 'gray.600');
@@ -83,19 +83,7 @@ export function Sidebar() {
                     justifyContent="center"
                     mb="90"
                 >
-                    <Link
-                        as={RouterLink}
-                        to="/logout"
-                        display="flex"
-                        alignItems="center"
-                        justifyContent="center"
-                        px="1.5"
-                        py="1"
-                        rounded="md"
-                        _hover={{bg: activeBg}}
-                    >
-                        <Icon as={FiLogOut} fontSize="xl" color={color} m="auto"/>
-                    </Link>
+                    <LogoutButton />
                 </Box>
             </Box>
         </Box>

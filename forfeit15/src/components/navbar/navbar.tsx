@@ -1,21 +1,15 @@
-import React, {useEffect, useState} from 'react';
-import {HubConnection, HubConnectionBuilder, LogLevel} from '@microsoft/signalr';
+import React from 'react';
 import {
     Box,
     Button,
     Flex,
     Link,
-    Popover,
-    PopoverArrow,
-    PopoverBody,
-    PopoverContent,
-    PopoverHeader,
-    PopoverTrigger, Text,
     useColorModeValue,
 } from '@chakra-ui/react';
-import {ArrowDownIcon, BellIcon, SettingsIcon} from '@chakra-ui/icons';
+import {SettingsIcon} from '@chakra-ui/icons';
 import {Link as RouterLink} from 'react-router-dom';
 import Notifications from "./notifications";
+import LoginButton from "../loginButton/LoginButton";
 
 
 
@@ -25,6 +19,7 @@ export default function Navbar() {
     const color = useColorModeValue('white', 'white');
     const iconColor = useColorModeValue('gray.300', 'gray.400');
     const iconHoverColor = useColorModeValue('gray.500', 'gray.200');
+        
     return (
         <Flex
             bg={bg}
@@ -53,11 +48,7 @@ export default function Navbar() {
                     aria-label="Settings"
                     _hover={{bg: 'transparent'}}
                 />
-                <Link as={RouterLink} to="/login">
-                    <Button rounded="4px" colorScheme="red">
-                        Login
-                    </Button>
-                </Link>
+                <LoginButton />
             </Box>
         </Flex>
     )

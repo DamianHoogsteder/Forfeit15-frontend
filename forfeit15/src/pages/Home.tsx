@@ -4,6 +4,7 @@ import {FaArrowDown} from 'react-icons/fa';
 import ThreadPreview from "../components/threadPreview/threadPreview";
 import FeaturedComponent from "../components/featuredComponent/featuredComponent";
 import BoldFont from '../fonts/THEBOLDFONT.ttf';
+import {useAuth0} from "@auth0/auth0-react";
 
 export function Home() {
     const [showArrow, setShowArrow] = useState(true);
@@ -49,10 +50,11 @@ export function Home() {
           }
         }
   `;
-    
     return (
         <Box mt={0}>
+
             <style>{fontStyles}{keyframes}</style>
+            
             <Flex alignItems="center" justifyContent="center" height="100vh" position="relative">
                 <Box
                     position="absolute"
@@ -88,10 +90,10 @@ export function Home() {
                     </Box>
                 )}
             </Flex>
-            <Box 
-                textAlign="center" 
-                fontSize="75px" 
-                fontWeight="bold" 
+            <Box
+                textAlign="center"
+                fontSize="75px"
+                fontWeight="bold"
                 mb={4}
                 color="white"
                 fontFamily="THEBOLDFONT"
