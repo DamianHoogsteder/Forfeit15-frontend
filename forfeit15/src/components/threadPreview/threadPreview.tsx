@@ -2,7 +2,17 @@ import {Box, Button, Flex, Image, Link, Text} from "@chakra-ui/react";
 import {Link as RouterLink} from "react-router-dom";
 import React from "react";
 
-export default function ThreadPreview() {
+interface InfoNode {
+
+};
+interface PatchNote {
+    id?: string;
+    title: string;
+    description: string;
+    infoNodes: InfoNode[];
+}
+
+export default function ThreadPreview({title, description, infoNodes} : PatchNote) {
     return (
         <Box
             borderRadius="md"
@@ -10,6 +20,7 @@ export default function ThreadPreview() {
             bg="gray.800"
             p={4}
             position="relative"
+            width="100%"
         >
             <Box
                 bg="red.500"
@@ -28,10 +39,9 @@ export default function ThreadPreview() {
                     borderRadius="md"
                 />
                 <Box>
-                    <Text fontSize="xl" fontWeight="bold" mb={2} color="white">Title</Text>
+                    <Text fontSize="xl" fontWeight="bold" mb={2} color="white">{title}</Text>
                     <Text fontSize="md" mb={4} color="white">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut bibendum augue sed sem ultricies, at
-                        suscipit metus sodales.
+                        {description}
                     </Text>
                 </Box>
             </Flex>

@@ -4,10 +4,39 @@ import {FaArrowDown} from 'react-icons/fa';
 import ThreadPreview from "../components/threadPreview/threadPreview";
 import FeaturedComponent from "../components/featuredComponent/featuredComponent";
 import BoldFont from '../fonts/THEBOLDFONT.ttf';
-import {useAuth0} from "@auth0/auth0-react";
+import axios from "axios";
+
+interface InfoNode {
+
+};
+
+interface PatchNote {
+    id?: string;
+    title: string;
+    description: string;
+    infoNodes: InfoNode[];
+}
 
 export function Home() {
     const [showArrow, setShowArrow] = useState(true);
+    const [patchnotes, setPatchnotes] = useState<PatchNote[]>([]);
+
+    useEffect(() => {
+        fetchPatchnotes();
+    }, []);
+
+    const fetchPatchnotes = async () => {
+        try {
+            const response = await axios.get('https://localhost:7043/Patchnote', {
+                headers: {
+                    Authorization: 'secret'
+                }
+            });
+            setPatchnotes(response.data);
+        } catch (error) {
+            console.log('Error fetching patchnotes:', error);
+        }
+    };
 
     useEffect(() => {
         const handleScroll = () => {
@@ -54,7 +83,7 @@ export function Home() {
         <Box mt={0}>
 
             <style>{fontStyles}{keyframes}</style>
-            
+
             <Flex alignItems="center" justifyContent="center" height="100vh" position="relative">
                 <Box
                     position="absolute"
@@ -104,7 +133,11 @@ export function Home() {
                 READING
             </Box>
             <Flex alignItems="center" justifyContent="center" height="100%" id="content-section">
-                <Grid templateColumns="3fr 2fr" gap={4}>
+                <Grid 
+                    templateColumns="3fr 2fr" 
+                      gap={4}
+                      width="100%"
+                >
                     <Box
                         height="90vh"
                         sx={{
@@ -116,17 +149,13 @@ export function Home() {
                         }}
                     >
                         <Stack spacing={4}>
-                            {/* Threads to be rendered from backend*/}
-                            <ThreadPreview/>
-                            <ThreadPreview/>
-                            <ThreadPreview/>
-                            <ThreadPreview/>
-                            <ThreadPreview/>
-                            <ThreadPreview/>
-                            <ThreadPreview/>
-                            <ThreadPreview/>
-                            <ThreadPreview/>
-                            <ThreadPreview/>
+                            {patchnotes.map((patch, index) => (
+                                <ThreadPreview
+                                    title={patch.title}
+                                    description={patch.description}
+                                    infoNodes={patch.infoNodes}
+                                />
+                                ))}
                         </Stack>
                     </Box>
                     <FeaturedComponent/>

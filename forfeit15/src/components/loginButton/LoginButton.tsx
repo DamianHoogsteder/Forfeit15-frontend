@@ -6,7 +6,6 @@ import ProfileMini from "../profileMini/profileMini";
 const loginButton = () =>
 {
     const {loginWithRedirect, isAuthenticated} = useAuth0();
-    
     return(
         !isAuthenticated ? (
             <Button 

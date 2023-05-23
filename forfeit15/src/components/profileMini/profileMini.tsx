@@ -10,7 +10,7 @@ const ProfileMini = () => {
     const color = useColorModeValue('white', 'white');
     const iconColor = useColorModeValue('gray.300', 'gray.400');
     const iconHoverColor = useColorModeValue('gray.500', 'gray.200');
-
+console.log(user)
     return (
         isAuthenticated ? (
             <Popover>
