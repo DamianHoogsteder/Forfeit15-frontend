@@ -47,7 +47,7 @@ export default function Notifications() {
         if (connection) {
             connection.start()
                 .then(result => {
-                    const userId = "089d2e27-be98-4f8d-a3dc-1535127b0e9e"
+                    const userId = "8f8e2f79-11f0-422a-a52b-93127967992c"
                     connection.invoke("Connect", userId);
 
                     connection.on('ReceiveMessage', message => {
@@ -149,7 +149,6 @@ export default function Notifications() {
                                             }}
                                         />
                                     </div>
-                                    )
                                 </Box>
                                 <Text>{notification.Description}</Text>
                                 <Text>You were subscribed to: {notification.Type}</Text>
